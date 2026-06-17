@@ -34,7 +34,7 @@ export function CTASection() {
               </Button>
             </Link>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-              <Button variant="outline" className="w-full sm:w-auto border-white/20 text-white hover:bg-white/5 font-semibold px-8 py-6 text-base rounded-xl transition-all">
+              <Button className="w-full sm:w-auto border border-white/30 bg-transparent text-white hover:bg-white/5 hover:text-white font-semibold px-8 py-6 text-base rounded-xl transition-all">
                 <MessageSquare className="h-5 w-5 mr-2 text-green-400" />
                 Chat on WhatsApp
               </Button>
