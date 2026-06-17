@@ -57,7 +57,7 @@ export function HeroSection() {
             </Button>
           </Link>
           <Link href="/services" className="w-full sm:w-auto">
-            <Button variant="outline" className="w-full sm:w-auto border-white/20 text-white hover:bg-white/5 font-semibold px-8 py-6 text-base rounded-xl transition-all">
+            <Button className="w-full sm:w-auto border border-white/30 bg-transparent text-white hover:bg-white/5 hover:text-white font-semibold px-8 py-6 text-base rounded-xl transition-all">
               Explore Services
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
