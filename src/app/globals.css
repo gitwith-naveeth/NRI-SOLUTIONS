@@ -1,26 +1,264 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+
+  /* Shadcn color tokens */
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* NRI Solutions Custom Colors */
+  --color-navy-950: #0a1628;
+  --color-navy-900: #0f2042;
+  --color-navy-800: #152d5a;
+  --color-navy-700: #1e3f73;
+  --color-navy-600: #2a5298;
+  --color-navy-500: #3668b5;
+  --color-navy-400: #5a8ad4;
+  --color-navy-300: #8fb0e4;
+  --color-navy-200: #bdd1f0;
+  --color-navy-100: #dfe9f7;
+  --color-navy-50: #f0f4fb;
+
+  --color-gold-600: #b8912e;
+  --color-gold-500: #d4a853;
+  --color-gold-400: #e0bc6e;
+  --color-gold-300: #ebd28f;
+  --color-gold-200: #f3e4b8;
+  --color-gold-100: #faf2dc;
+  --color-gold-50: #fdf9f0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+  --primary: #0f2042;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f4fb;
+  --secondary-foreground: #0f2042;
+  --muted: #f8f9fa;
+  --muted-foreground: #6b7280;
+  --accent: #d4a853;
+  --accent-foreground: #0f2042;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #d4a853;
+  --chart-1: #0f2042;
+  --chart-2: #d4a853;
+  --chart-3: #2a5298;
+  --chart-4: #e0bc6e;
+  --chart-5: #152d5a;
+  --radius: 0.75rem;
+  --sidebar: #f8f9fa;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #0f2042;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f0f4fb;
+  --sidebar-accent-foreground: #0f2042;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #d4a853;
+}
+
+.dark {
+  --background: #0a1628;
+  --foreground: #f8f9fa;
+  --card: #0f2042;
+  --card-foreground: #f8f9fa;
+  --popover: #0f2042;
+  --popover-foreground: #f8f9fa;
+  --primary: #d4a853;
+  --primary-foreground: #0a1628;
+  --secondary: #152d5a;
+  --secondary-foreground: #f8f9fa;
+  --muted: #152d5a;
+  --muted-foreground: #8fb0e4;
+  --accent: #d4a853;
+  --accent-foreground: #0a1628;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #d4a853;
+  --sidebar: #0f2042;
+  --sidebar-foreground: #f8f9fa;
+  --sidebar-primary: #d4a853;
+  --sidebar-primary-foreground: #0a1628;
+  --sidebar-accent: #152d5a;
+  --sidebar-accent-foreground: #f8f9fa;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #d4a853;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply scroll-smooth font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Custom Animations ─────────────────────────────────────── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 168, 83, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(212, 168, 83, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+/* ─── Gradient Utilities ────────────────────────────────────── */
+.gradient-navy {
+  background: linear-gradient(135deg, #0a1628 0%, #152d5a 50%, #0f2042 100%);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, #d4a853 0%, #e0bc6e 50%, #ebd28f 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #0a1628 0%, #0f2042 40%, #152d5a 70%, #1e3f73 100%);
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #d4a853, #e0bc6e, #ebd28f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glass Effect ──────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ─── Section Styling ───────────────────────────────────────── */
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.container-custom {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
 }
